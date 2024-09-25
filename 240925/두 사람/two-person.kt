@@ -9,7 +9,7 @@ fun main() {
     val c = sc.nextInt()
     val d = sc.next()
 
-    val result = if((a >= 19 || c >= 19) && (b == "M" || d == "M")) 1 else 0
-
+    val result = if((a >= 19 && b == "M") || (c >= 19 && d == "M")) 1 else 0
+    
     println("$result")
 }
