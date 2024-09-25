@@ -5,11 +5,10 @@ fun main() {
     val sc = Scanner(System.`in`)
 
     val n = sc.nextInt()
-    var num = 1
+    var num = 3
 
     while(num <= n) {
-        if(num % 3 == 0) {
-            print("$num ")
-        }
+        print("$num ")
+        num += 3
     }
 }
