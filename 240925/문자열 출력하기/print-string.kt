@@ -6,7 +6,7 @@ fun main() {
 
     var n = sc.nextInt()
 
-    repeat(6) {
+    repeat(n) {
         println("LeebrosCode")
     }
 }
