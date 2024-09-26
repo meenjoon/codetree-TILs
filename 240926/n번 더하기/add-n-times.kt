@@ -10,25 +10,8 @@ fun main() {
     var sumNum = a + n
     println("$sumNum")
 
-    var flag = Flag.A
-
     repeat(n - 1) {
-        if(flag == Flag.A) {
-            sumNum = sumNum + a
-        } else {
-            sumNum = sumNum + n
-        }
-        println("$sumNum")
-
-        flag = if(flag == Flag.A) {
-            Flag.N
-        } else {
-            Flag.A
-        }
+        sumNum += n
+         println("$sumNum")
     }
-}
-
-enum class Flag {
-	A,
-    N
 }
