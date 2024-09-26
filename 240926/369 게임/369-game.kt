@@ -11,7 +11,7 @@ fun main() {
         val isContains = iStr.contains("3") || iStr.contains("6") || iStr.contains("9")
 
         if(i % 3 == 0 || isContains) {
-            print("0")
+            print("0 ")
         } else {
             print("$i ")
         }
