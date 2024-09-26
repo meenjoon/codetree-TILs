@@ -10,7 +10,7 @@ fun main() {
 
     for(i in 1..n) {
         if(i != n && n % i == 0) {
-            sumNum++
+            sumNum += i
         }
     }
     
