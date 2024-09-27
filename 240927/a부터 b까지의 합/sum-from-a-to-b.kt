@@ -8,7 +8,7 @@ fun main() {
     val b = sc.nextInt()
 
     var sum = 0
-    for(i in 2..5) {
+    for(i in a..b) {
         sum +=i
     }
 
