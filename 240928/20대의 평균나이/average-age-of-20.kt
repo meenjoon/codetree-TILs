@@ -9,7 +9,7 @@ fun main() {
     while(true) {
         val a = sc.nextInt()
         if(a / 10 != 2) {
-            val avg = sum / cnt.0
+            val avg = sum.toDouble() / cnt
             val roundAvg = round(avg * 100) / 100
             val formatAvg = String.format("%.2f", roundAvg)
             print("$formatAvg")
