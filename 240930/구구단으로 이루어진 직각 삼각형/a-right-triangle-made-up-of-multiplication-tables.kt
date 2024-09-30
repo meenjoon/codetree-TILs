@@ -6,7 +6,7 @@ fun main() {
     
     val n = sc.nextInt()
 
-    for(i in 1..5) {
+    for(i in 1..n) {
         val jMaxNum = n - i + 1
         for(j in 1..jMaxNum) {
             print("$i * $j = ${i * j}${if(j != jMaxNum) " / " else ""}")
