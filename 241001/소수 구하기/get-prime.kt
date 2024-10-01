@@ -6,18 +6,17 @@ fun main() {
 
     val n = sc.nextInt()
 
-    
     for(i in 2..n) {
-        
-        var divisorCnt = 0
-        for(j in 1..i) {
+
+        var isPrime = true
+        for(j in 2..i-1) {
             if(i % j == 0) {
-                divisorCnt++
+                isPrime = false
             }
         }
-        if(divisorCnt == 2) {
+        
+        if(isPrime) {
             print("$i ")
         }
-        divisorCnt = 0
     }
 }
