@@ -9,7 +9,7 @@ fun main() {
     sc.nextLine()
 
     var cnt = 0
-    repeat(3) {
+    repeat(n) {
         val a = sc.nextLine().trim().split(" ").map{ it.toInt() }.sum() / 4
         if(a >= 60){
             println("pass")
