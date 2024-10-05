@@ -20,15 +20,9 @@ fun main() {
             val findAOfBIndex = a.indexOf(num)
             println("${if(findAOfBIndex == -1) "0" else findAOfBIndex + 1}")
         } else {
-            var startNum = 0
-            var endNum = 0
-            b.forEachIndexed { index, value ->
-                if(index == 1) {
-                    startNum = value
-                } else if(index == 2) {
-                    endNum = value
-                }
-            }
+            var startNum = b[1]
+            var endNum = b[2]
+
             for(i in startNum-1..endNum-1) {
                 print("${a[i]} ")
             }
