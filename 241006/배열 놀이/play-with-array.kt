@@ -8,14 +8,10 @@ fun main() {
 
     val a = sc.nextLine().trim().split(" ").map{ it.toInt() }
 
-    var type = 1
     repeat(q) {
-        if(type > 3) {
-            type = 1
-        }
-
         val b = sc.nextLine().trim().split(" ").map{ it.toInt() }
 
+        val type = b[0]
         if(type == 1) {
             val num = b[b.lastIndex]
             println("${a[num-1]}")
@@ -38,7 +34,5 @@ fun main() {
             }
             println("")
         }
-
-        type++
     }
 }
