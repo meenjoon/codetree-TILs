@@ -12,9 +12,12 @@ fun main() {
         array[index] = value.toString()
     }
 
+    var findIndex = -1
     for(i in array.indices) {
         if(a == array[i]) {
-            print("$i")
+            findIndex = i
         }
     }
+
+    print("${if(findIndex != -1) "$findIndex" else "None"}")
 }
