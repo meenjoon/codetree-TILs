@@ -9,10 +9,11 @@ fun main() {
     
     val array = IntArray(10)
 
-    while(a >= 1) {
+    while(a >1) {
         val remain = a % b
         array[remain] += 1
 
+        // println("$a / $b = ${a / b} --- remain: $remain")
         a = a / b
     }
 
