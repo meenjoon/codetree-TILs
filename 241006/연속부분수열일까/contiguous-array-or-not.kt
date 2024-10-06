@@ -6,9 +6,9 @@ fun main() {
 
     val (n, m) = sc.nextLine().trim().split(" ").map { it.toInt() }
 
-    val a = sc.nextLine().trim().split(" ").joinToString(separator = "")
+    val a = sc.nextLine().trim().split(" ").map { it.toInt() }
     
-    val b = sc.nextLine().trim().split(" ").joinToString(separator = "")
+    val b = sc.nextLine().trim().split(" ").map { it.toInt() }
 
     val cntSet = mutableSetOf<Int>()
 
@@ -22,8 +22,8 @@ fun main() {
                 if(satisfiedIndex + 1 <= b.lastIndex) {
                     if(a[i] == b[satisfiedIndex + 1]) {
                         flag = true
-                        satisfiedIndex += 1
                         cnt++
+                        satisfiedIndex += 1
                         cntSet.add(cnt)
                         break
                     } else {
@@ -57,7 +57,7 @@ fun main() {
         }
     }
 
-    if(cntSet.maxOrNull() == b.length) {
+    if(cntSet.maxOrNull() == b.size) {
         print("Yes")
     } else {
         print("No")
