@@ -22,12 +22,13 @@ fun main() {
                 if(satisfiedIndex + 1 <= b.lastIndex) {
                     if(a[i] == b[satisfiedIndex + 1]) {
                         flag = true
-                        satisfiedIndex = j
+                        satisfiedIndex += 1
                         cnt++
                         cntSet.add(cnt)
                         break
                     } else {
                         if(a[i] == b[j]) {
+                            cnt = 0
                             flag = true
                             satisfiedIndex = j
                             cnt++
