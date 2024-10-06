@@ -10,8 +10,14 @@ fun main() {
 
     val a = sc.nextLine().trim().split(" ").map{ it.toInt() }.toIntArray()
 
+    // val a = sc.nextLine().trim().split(" ").map{ it.toInt() }.sortedDescending()
+    // a.sortDescending()
+
     for(i in 0..a.lastIndex) {
         var maxNum = Int.MIN_VALUE
+        if(i == 2) { // 목표하는 바가 첫번째 두번째 숫자 이므로 세번째 숫자 부터는 계산을 안해도 되므로 break로 빠져나감.
+            break
+        }
 
         for(j in i..a.lastIndex) {
             if(a[j] >= maxNum) {
@@ -27,5 +33,5 @@ fun main() {
         if(index == 0 || index == 1) {
             print("$value ")
         }
-    }
+    }   
 }
