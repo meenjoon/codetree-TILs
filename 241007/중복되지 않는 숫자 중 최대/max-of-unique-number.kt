@@ -10,16 +10,38 @@ fun main() {
 
     val a = sc.nextLine().trim().split(" ").map { it.toInt() }
 
-    val map = mutableMapOf<Int, Int>()
+    // val map = mutableMapOf<Int, Int>()
 
-    a.forEachIndexed { index, num ->
-        map[num] = map.getOrDefault(num, 0) + 1
-    }
+    // a.forEachIndexed { index, num ->
+    //     map[num] = map.getOrDefault(num, 0) + 1
+    // }
+
+    // var maxNum = -1
+    // a.forEachIndexed { index, num ->
+    //     if(map.getOrDefault(num, 0) < 2 && num >= maxNum ) {
+    //         maxNum = num
+    //     }
+    // }
+
+    // print("$maxNum")
 
     var maxNum = -1
-    a.forEachIndexed { index, num ->
-        if(map.getOrDefault(num, 0) < 2 && num >= maxNum ) {
-            maxNum = num
+    for(i in 0..a.lastIndex) {
+        val currNum = a[i]
+        
+        if(currNum >= maxNum) {
+            var duplicationCnt = 0
+            for(i in 0..a.lastIndex) {
+                if(a[i] == currNum) {
+                    duplicationCnt++
+                }
+                if(duplicationCnt > 1) {
+                    break
+                }
+            }
+            if(duplicationCnt == 1) {
+                maxNum = currNum
+            }
         }
     }
 
