@@ -10,36 +10,31 @@ fun main() {
     
     val b = sc.nextLine().trim().split(" ").joinToString(separator = "")
 
+    val cntSet = mutableSetOf<Int>()
+
     var flag = false
-    var satisfied = -1
     var cnt = 0
+    
     for(i in 0..a.lastIndex) {
         for(j in 0..b.lastIndex) {
-            if(flag) {
-                if(satisfied + 1 < b.lastIndex) {
-                    if(a[i] == b[satisfied + 1]) {
-                        flag = true
-                        satisfied = j
-                        cnt++
-                        continue
-                    }
-                }
+            if(a[i] == b[j]) {
+                flag = true
+                cnt++
+                cntSet.add(cnt)
+                continue
             } else {
-                cnt = 0
-                if(a[i] == b[j]) {
-                    flag = true
-                    satisfied = j
-                    cnt++
-                    continue
-                }
-            }
+                flag = false
+            }           
+        }
+
+        if(flag == false) {
+            cnt = 0
         }
     }
 
-    if(cnt == b.length) {
+    if(cntSet.maxOrNull() == b.length) {
         print("Yes")
     } else {
         print("No")
     }
-    
 }
