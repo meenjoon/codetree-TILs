@@ -21,7 +21,7 @@ fun main() {
                 flag = true
                 cnt++
                 cntSet.add(cnt)
-                continue
+                break
             } else {
                 flag = false
             }           
