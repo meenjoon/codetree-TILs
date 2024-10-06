@@ -13,12 +13,36 @@ fun main() {
     val cntSet = mutableSetOf<Int>()
 
     var flag = false
+    var satisfiedIndex = -1
     var cnt = 0
     
     for(i in 0..a.lastIndex) {
         for(j in 0..b.lastIndex) {
+            if(flag) {
+                if(satisfiedIndex + 1 <= b.lastIndex) {
+                    if(a[i] == b[satisfiedIndex + 1]) {
+                        flag = true
+                        satisfiedIndex = j
+                        cnt++
+                        cntSet.add(cnt)
+                        break
+                    } else {
+                        if(a[i] == b[j]) {
+                            flag = true
+                            satisfiedIndex = j
+                            cnt++
+                            cntSet.add(cnt)
+                            break
+                        } else {
+                            flag = false
+                        }
+                    }
+                }
+            }
+
             if(a[i] == b[j]) {
                 flag = true
+                satisfiedIndex = j
                 cnt++
                 cntSet.add(cnt)
                 break
