@@ -19,7 +19,7 @@ fun main() {
         }
         var currColumn = col
         
-        while(currRow >=0 && currRow <= n-1 && currColumn >= 0) {
+        while(currRow >= 0 && currRow <= n-1 && currColumn >= 0 && currColumn <= n-1) {
             array[currRow][currColumn] = cnt
 
             if(isEvenRow) {
