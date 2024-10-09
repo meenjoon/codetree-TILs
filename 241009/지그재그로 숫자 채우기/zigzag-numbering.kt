@@ -12,9 +12,9 @@ fun main() {
     for(i in 0..n-1) {
         for(j in 0..m-1) {
             if(j % 2 == 0) {
-                array[i][j] = i * j
+                array[i][j] = (j * n) + i
             } else {
-                array[i][j] = ((i + 1) * n) - i
+                array[i][j] = ((j + 1) * n) - (i + 1)
             }
         }
     }
