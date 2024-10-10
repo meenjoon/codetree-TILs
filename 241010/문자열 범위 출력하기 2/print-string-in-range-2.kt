@@ -7,9 +7,9 @@ fun main() {
     val a = sc.nextLine()
     val b = sc.nextInt()
 
-    if(b > a.lenght) {
-        for(i in a.lastIndes downTo 0) {
-            print("$a[i]")
+    if(b > a.length) {
+        for(i in a.lastIndex downTo 0) {
+            print("${a[i]}")
         }
     } else {
         for(i in a.lastIndex downTo a.lastIndex-b+1) {
