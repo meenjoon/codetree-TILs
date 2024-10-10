@@ -1,49 +1,47 @@
 import java.util.*
-import kotlin.math.*
 
 fun main() {
     val sc = Scanner(System.`in`)
-
+    
     val a = sc.next()
 
     val list = mutableListOf<String>()
 
     var rememberChar = a[0]
-    var cnt = 0
-    for(i in 0..a.lastIndex) {
+    var cnt = 1
+
+    for (i in 1..a.lastIndex) {
         val char = a[i]
 
-        if(i == a.lastIndex) {
-            if(char == rememberChar) {
-                list.add(char.toString())
-                val cntStr = (cnt+1).toString()
-                cntStr.forEach {
-                    list.add(it.toString())
-                }
-            } else {
-                list.add(char.toString())
-                val cntStr = cnt.toString()
-                cntStr.forEach {
-                    list.add(it.toString())
-                }
-            }
-            break
-        }
-
-        if(char == rememberChar) {
+        if (char == rememberChar) {
             cnt++
         } else {
+            // 문자열 추가
             list.add(rememberChar.toString())
+
+            // 숫자 추가
             val cntStr = cnt.toString()
             cntStr.forEach {
                 list.add(it.toString())
             }
+
+            rememberChar = char
             cnt = 1
         }
+    }
 
-        rememberChar = a[i]
+    // 마지막 문자의 카운트를 출력
+    // 문자열 추가
+    list.add(rememberChar.toString())
+
+    // 숫자 추가
+    val cntStr = cnt.toString()
+    cntStr.forEach {
+        list.add(it.toString())
     }
 
     println("${list.size}")
-    print("${list.joinToString(separator = "")}")
+    list.forEach {
+        print("$it")
+    }
 }
