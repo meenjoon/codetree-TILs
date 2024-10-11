@@ -6,9 +6,17 @@ fun main() {
 
     val a = sc.nextLine().reversed()
 
+    val isEven = a.length % 2 == 0
     a.forEachIndexed{ index, value ->
-        if(index % 2 == 0) {
-            print("$value")
+        if(isEven) {
+            if(index % 2 == 0) {
+                print("$value")
+            }
+        }else {
+            if((index + 1) % 2 == 0) {
+               print("$value")
+            }
         }
+        
     }
 }
