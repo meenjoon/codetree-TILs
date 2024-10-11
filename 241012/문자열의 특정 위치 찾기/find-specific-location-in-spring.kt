@@ -7,7 +7,7 @@ fun main() {
     val (a, b) = sc.nextLine().trim().split(" ")
 
     var findIndex = -1
-    for(i in 0..a.length-2) {
+    for(i in 0..a.length-1) {
         if(b == a[i].toString()) {
             findIndex = i
             break
