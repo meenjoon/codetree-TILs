@@ -8,19 +8,24 @@ fun main() {
 
     sc.nextLine()
 
-    val a = sc.nextLine().trim().split(" ").map { it.toInt() }
-
-    var cnt = 1
-    a.forEach {
-        val str = it.toString()
-        str.forEach { char ->
-            if(cnt == 5) {
-                println("$char")
-                cnt = 0
-            } else {
-                print("$char")
-            }
-            cnt++
-        }
+    val a = sc.nextLine().trim().replace(" ", "")
+    a.chunked(5).forEach {
+        println(it)
     }
+
+    // val a = sc.nextLine().trim().split(" ").map { it.toInt() }
+
+    // var cnt = 1
+    // a.forEach {
+    //     val str = it.toString()
+    //     str.forEach { char ->
+    //         if(cnt == 5) {
+    //             println("$char")
+    //             cnt = 0
+    //         } else {
+    //             print("$char")
+    //         }
+    //         cnt++
+    //     }
+    // }
 }
