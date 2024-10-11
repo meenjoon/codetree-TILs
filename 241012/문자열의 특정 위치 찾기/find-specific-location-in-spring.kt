@@ -14,7 +14,7 @@ fun main() {
         }
     }
     
-    if(findIndex != 1) {
+    if(findIndex != -1) {
         print("$findIndex")
     } else {
         print("No")
