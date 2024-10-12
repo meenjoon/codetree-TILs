@@ -18,5 +18,5 @@ fun main() {
         }
     }
 
-    print("${map.getOrDefault("ee", 0)} ${map.getOrDefault("ee", 0)}")
+    print("${map.getOrDefault("ee", 0)} ${map.getOrDefault("eb", 0)}")
 }
