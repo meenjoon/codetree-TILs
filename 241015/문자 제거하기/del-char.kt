@@ -4,25 +4,20 @@ import kotlin.math.*
 fun main() {
     val sc = Scanner(System.`in`)
     
-    var sb = StringBuilder(sc.nextLine())
+    var str = sc.nextLine()
 
     while(true) {
         val n = sc.nextLine().toInt()
 
-
-        if(sb.length <= n) {
-            if(sb.length == 2) {
-                sb.delete(1, 2)
-            } else {
-                sb.delete(sb.length-2, sb.length-1)
-            }
+        if(str.length <= n) {
+            str = str.slice(0..str.length-2)
         } else {
-            sb.delete(n, n+1)
+            str = str.slice(0..n-1) + str.slice(n+1..str.length-1)
         }
-        
-        println("${sb.toString()}")
 
-        if(sb.length == 1) {
+        println("$str")
+
+        if(str.length == 1) {
             break
         }
     }
