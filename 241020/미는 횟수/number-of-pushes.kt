@@ -16,9 +16,9 @@ fun main() {
         while(cnt <= a.length-1) {
             cnt++
 
-            val firstChar = sb[0]
-            sb.delete(0, 1)
-            sb.append(firstChar)
+            val lastChar = sb[sb.length-1]
+            sb.delete(sb.length-1, sb.length)
+            sb.insert(0, lastChar)
 
             if(sb.toString() == b) {
                 break
