@@ -10,7 +10,8 @@ fun main() {
         str.forEach { char ->
             if(char.isLetter()) {
                 if(97 <= char.code) {
-                    print("${(char.code - 32).toChar()}")
+                    print("${char.uppercaseChar()}")
+                    // print("${(char.code - 32).toChar()}")
                 } else {
                     print("$char")
                 }
