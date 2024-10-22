@@ -33,3 +33,17 @@ fun isMaxCommonDivisor(
 
     print("$maxCommonDivisors")
 }
+
+fun gcd(
+    num1: Int,
+    num2: Int,
+) {
+    val minNum = if(num1 > num2) num2 else num1
+
+    for(i in minNum downTo 1) {
+        if(num1 % i == 0 && num2 % i == 0) {
+            print("$i")
+            break
+        }
+    }
+}
