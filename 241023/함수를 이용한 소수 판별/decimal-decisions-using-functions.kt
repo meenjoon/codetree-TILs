@@ -17,8 +17,11 @@ fun main() {
 fun isPrimeNumber(
     num: Int
 ): Boolean {
-    if(num == 1 || num == 2) {
+    if(num == 1) {
         return false
+    }
+    if(num == 2) {
+        return true
     }
 
     var isPrimeNumber = true
