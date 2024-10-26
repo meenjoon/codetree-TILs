@@ -20,7 +20,7 @@ fun main() {
 
 
 fun reversed(a: String): Boolean {
-    for(i in 0..a.length / 2 - 1) {
+    for(i in 0..(a.length-1) / 2) {
         if(a[i] != a[(a.length-1) - i]) return false
     }
 
