@@ -11,7 +11,7 @@ fun main() {
 
     recur(n = n - 1, a = a)
 
-    print(list.sorted().joinToString(separator = " "))
+    print(list.reversed().joinToString(separator = " "))
 }
 
 fun recur(n: Int, a: List<Int>) {
