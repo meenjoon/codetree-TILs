@@ -24,8 +24,13 @@ fun main() {
         )
     }
 
-    list.sortedWith(compareBy<Person> { it.height }
-        .thenByDescending { it.weight }
+    // list.sortedWith(compareBy<Person> { it.height }
+    //     .thenByDescending { it.weight }
+    // ).forEach {
+    //     println(it)
+    // }
+
+    list.sortedWith(compareBy({ it.height }, { -it.weight })
     ).forEach {
         println(it)
     }
