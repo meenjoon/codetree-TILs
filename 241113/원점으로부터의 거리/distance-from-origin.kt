@@ -25,13 +25,14 @@ fun main() {
         it.copy(distance = abs(it.x) + abs(it.y))
     }
 
-    formattedList.sortedWith(compareBy<Dot> { it.distance } 
-        .thenBy { it.index }
+    // formattedList.sortedWith(compareBy<Dot> { it.distance } 
+    //     .thenBy { it.index }
+    // ).forEach {
+    //     println(it.index)
+    // }
+
+    formattedList.sortedWith(compareBy( { it.distance }, { it.index } )
     ).forEach {
         println(it.index)
     }
-
-    
-
-
 }
