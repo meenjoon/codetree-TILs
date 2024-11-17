@@ -55,9 +55,9 @@ fun includeDay(
     isPositive: Boolean,
 ): Boolean {
     val dayList = if(isPositive) {
-        listOf("Mon", "Tue", "Wed", "Thu", "Fir", "Sat", "Sun")
+        listOf("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
     } else {
-        listOf("Mon", "Sun", "Sat", "Fir", "Thu", "Wed", "Tue")
+        listOf("Mon", "Sun", "Sat", "Fri", "Thu", "Wed", "Tue")
     }
     val day = dayList[modDay]
     val modIndex = dayList.indexOf(day)
