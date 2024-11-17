@@ -20,10 +20,15 @@ fun main() {
     
     if(isPositive) {
         println("${divideDay + includeDay}")
+    } else if(secondTotalDay == firstTotalDay) {
+        if(day == "Mon") {
+            print("1")
+        } else {
+            print("0")
+        }
     } else {
         print("0")
     }
-    
 }
 
 fun monthToDay(month: Int): Int {
