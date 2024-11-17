@@ -18,15 +18,15 @@ fun main() {
     val modDay = diffDay % 7
     val includeDay = if(includeDay(modDay = modDay, compareDay = day, isPositive = isPositive)) 1 else 0
     
-    if(isPositive) {
+    if(isPositive) { // second 가 더 큰 경우
         println("${divideDay + includeDay}")
-    } else if(secondTotalDay == firstTotalDay) {
-        if(day == "Mon") {
+    } else if(secondTotalDay == firstTotalDay) { // first와 second 같은 경우
+        if(day == "Mon") { // first와 second 같은 경우에서, 비교 day 가 mon 이면 1 출력
             print("1")
-        } else {
+        } else { // first와 second 같은 경우에서, 비교 day 가 mon 이 아닐 경우 0 출력
             print("0")
         }
-    } else {
+    } else { // 그 외(first가 더 큰 경우) 0 출력
         print("0")
     }
 }
@@ -50,7 +50,7 @@ fun monthToDay(month: Int): Int {
 }
 
 fun includeDay(
-    modDay: Int,
+    modDayNum: Int,
     compareDay: String,
     isPositive: Boolean,
 ): Boolean {
@@ -59,9 +59,9 @@ fun includeDay(
     } else {
         listOf("Mon", "Sun", "Sat", "Fri", "Thu", "Wed", "Tue")
     }
-    val day = dayList[modDay]
-    val modIndex = dayList.indexOf(day)
-    val compareIndex = dayList.indexOf(compareDay)
+    val modDay = dayList[modDayNum] // modDay 날짜 구하기
+    val modIndex = dayList.indexOf(modDay) // modDay 인덱스 구하기
+    val compareIndex = dayList.indexOf(compareDay) // compareDay 인덱스 구하기
 
-    return modIndex >= compareIndex
+    return modIndex >= compareIndex // modDay 인덱스가 compareDay 인덱스보다 같거나 더 크면 포함되는 것임.
 }
