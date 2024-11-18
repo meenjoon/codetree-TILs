@@ -17,5 +17,10 @@ fun main() {
         list.add(n % 2)
         n = n / 2
     }
-    print(list.reversed().joinToString(separator=""))
+    
+    if(n == 0) {
+        print("0")
+    } else {
+        print(list.reversed().joinToString(separator=""))
+    }
 }
