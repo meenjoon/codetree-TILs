@@ -15,23 +15,23 @@ fun main() {
         }
     }
 
-    // val formattedMap = map.values.filter { it >= n }
+    val formattedMap = map.values.filter { it >= n }
 
-    // var rememberValue = Int.MIN_VALUE
-    // var duplicatedMaxNum = 0
-    // for((index, entry) in map.entries.withIndex()) {
-    //     if(index == 0) {
-    //         rememberValue = entry.value
-    //         continue
-    //     } else {
-    //         if((rememberValue == entry.value) && (duplicatedMaxNum <= rememberValue)) {
-    //             duplicatedMaxNum = rememberValue
-    //         }
-    //             rememberValue = entry.value
-    //         }
-    //     }
+    var rememberValue = Int.MIN_VALUE
+    var duplicatedMaxNum = 0
+    for((index, entry) in map.entries.withIndex()) {
+        if(index == 0) {
+            rememberValue = entry.value
+            continue
+        } else {
+            if((rememberValue == entry.value) && (duplicatedMaxNum <= rememberValue)) {
+                duplicatedMaxNum = rememberValue
+            }
+                rememberValue = entry.value
+            }
+        }
 
-    //     print(duplicatedMaxNum)
+        print(duplicatedMaxNum)
 
-    print(map.values.maxOrNull())
+    // print(map.values.maxOrNull())
 }
