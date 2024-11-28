@@ -53,5 +53,9 @@ fun main() {
     val height = maxY + 1 - minY
     val dimention = width * height
 
-    print(dimention)
+    if(space == 0) {
+        print(0)
+    } else {
+        print(dimention)
+    }
 }
