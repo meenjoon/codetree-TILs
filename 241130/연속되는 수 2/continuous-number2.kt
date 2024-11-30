@@ -33,6 +33,10 @@ fun main() {
         }
         cntList.add(continueCnt)
     }
-
-    print(cntList.maxOrNull())
+    
+    if(n == 1) {
+        print(1)
+    } else {
+        print(cntList.maxOrNull())
+    }
 }
