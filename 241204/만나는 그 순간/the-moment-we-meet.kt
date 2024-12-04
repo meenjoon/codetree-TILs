@@ -34,6 +34,7 @@ fun main() {
     }
 
     var minTime = -1
+    // 마지막 범위를 -1 한 이유는 time++ 를 조건 마지막에 하기에 마지막 값은 범위에 포함되면 안됨 
     for(i in 1..timeA-1) {
         if(arrayA[i] == arrayB[i]) {
             minTime = i
