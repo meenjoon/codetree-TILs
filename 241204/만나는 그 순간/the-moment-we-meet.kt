@@ -33,10 +33,13 @@ fun main() {
         }
     }
 
-    for(i in 1..timeA) {
+    var minTime = -1
+    for(i in 1..timeA-1) {
         if(arrayA[i] == arrayB[i]) {
-            print(i)
+            minTime = i
             break            
         }
     }
+
+    print(minTime)
 }
