@@ -6,7 +6,9 @@ fun main() {
 
     val (n, m, k) = sc.nextLine().trim().split(" ").map { it.toInt() }
     
+    // 벌칙 학생 번호가 들어있는 배열
     val personArray = IntArray(10000)
+    // 모든 학생들의 벌칙 수가 들어있는 배열
     val wrongArray = IntArray(101) 
 
     for(i in 0..m-1) {
