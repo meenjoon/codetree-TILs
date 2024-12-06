@@ -7,7 +7,7 @@ fun main() {
     val (n, m, k) = sc.nextLine().trim().split(" ").map { it.toInt() }
     
     val personArray = IntArray(100)
-    val wroingArray = IntArray(100) 
+    val wrongArray = IntArray(10000) 
 
     for(i in 0..m-1) {
         personArray[i] = sc.nextInt()
@@ -17,9 +17,9 @@ fun main() {
 
     for(i in 0..m-1) {
         val num = personArray[i]
-        wroingArray[num] += 1
+        wrongArray[num] += 1
 
-        if(wroingArray[num] == k) {
+        if(wrongArray[num] == k) {
             resultNum = num
             break
         }
