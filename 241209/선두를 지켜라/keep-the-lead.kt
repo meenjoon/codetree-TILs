@@ -4,72 +4,66 @@ import kotlin.math.*
 fun main() {
     val sc = Scanner(System.`in`)
 
-    val (n, m) = sc.nextLine().trim().split(" ").let{
+    val (n, m) = sc.nextLine().trim().split(" ").let {
         Pair(first = it[0].toInt(), second = it[1].toInt())
     }
 
-    val arrayA = FloatArray(1000000)
-    val arrayB = FloatArray(1000000)
+    val arrayA = IntArray(1000000) { Int.MIN_VALUE }
+    val arrayB = IntArray(1000000) { Int.MIN_VALUE }
 
     var distanceA = 0
     var distanceB = 0
-
     var timeA = 0
     var timeB = 0
     repeat(n+m) { it ->
         val parentIndex = it
 
-        val (v, t) = sc.nextLine().trim().split(" ").let{
+        val (v, t) = sc.nextLine().trim().split(" ").let {
             Pair(first = it[0].toInt(), second = it[1].toInt())
         }
 
-        val distance = v * t
-        var tempT = t
-
+        // arrayA 일 때
         if(parentIndex < n) {
             repeat(t) { it ->
-                val distance = (v).toFloat() / (tempT).toFloat()
-                arrayA[it + timeA] = distanceA + distance 
-                tempT--
+                arrayA[it+timeA] = distanceA + v
+                distanceA = arrayA[it+timeA]               
             }
 
-            distanceA += v
             timeA += t
-        } else {
+        } 
+        // arryB 일 때
+        else {
             repeat(t) { it ->
-                val distance = (v).toFloat() / (tempT).toFloat()
-                arrayB[it + timeB] = distanceB + distance
-                tempT--
+                arrayB[it+timeB] = distanceB + v
+                distanceB = arrayB[it+timeB]
             }
 
-            distanceB += v
             timeB += t
         }
     }
 
-    var stopCnt = 0
     var isABig = false
+    var isFirstChange = false
     var cnt = 0
     for(i in arrayA.indices) {
-        // println("$i : numA[${arrayA[i]}] numB[${arrayB[i]}]")
-        if(stopCnt == 2) {
+        val numA = arrayA[i]
+        val numB = arrayB[i]
+
+        // println("index[$i] numA[$numA] numB[$numB]")
+        if(numA == Int.MIN_VALUE && numB == Int.MIN_VALUE) {
             break
         }
 
-        val numA = arrayA[i]
-        val numB = arrayB[i]
         if(numA == numB) {
-            stopCnt++
+            continue
+        } else if(!isFirstChange) {
+            isFirstChange = true
+            isABig = if(numA > numB) true else false
             continue
         }
-        
+
         val tempIsABig = isABig
         isABig = if(numA > numB) true else false
-        if(i == 0) {
-            cnt++
-            continue
-        }
-        
         if(tempIsABig != isABig) {
             cnt++
         }
