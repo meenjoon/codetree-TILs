@@ -19,10 +19,10 @@ fun main() {
         
         if(dir == 'L') {
            val resultDirection = currDirection - 1
-           currDirection = if(resultDirection == 0) 3 else resultDirection
+           currDirection = resultDirection % 4
         } else if(dir == 'R') {
             val resultDirection = currDirection + 1
-            currDirection = if(resultDirection == 3) 0 else resultDirection
+            currDirection = resultDirection % 4
         } else {
             x += arrayX[currDirection]
             y += arrayY[currDirection]
