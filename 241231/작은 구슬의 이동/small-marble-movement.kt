@@ -9,12 +9,11 @@ fun main() {
         Triple(it[0].toInt(), it[1].toInt(), it[2])
     }
 
-    val arrayN = Array(n) { IntArray(n) }
     val dX = intArrayOf(1, 0, -1, 0)
     val dY = intArrayOf(0, -1, 0, 1)
 
     var x = r - 1 // 행(가로)
-    var y = c - 1 // 열(세로)
+    var y = c - 1 // 열(세로))
 
     var direction = getDirection(dir = d)
     while(t > 0) {
@@ -37,13 +36,12 @@ fun main() {
         y += dX[direction]
         t--
     }
-
     print("${x+1} ${y+1}")
 }
 
 fun getDirection(dir: String): Int {
-    return if(dir == "U") 3
-        else if(dir == "D") 1
+    return if(dir == "U") 1 // 배열 기준 U(업)을 했을때는 감소(하) 해야해서 1 할당
+        else if(dir == "D") 3 // 배열 기준 D(다운)을 했을때는 증가(상) 해야해서 3 할당
         else if(dir == "R") 0
         else 2
 }
