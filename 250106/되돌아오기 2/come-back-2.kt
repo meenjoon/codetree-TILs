@@ -18,39 +18,26 @@ fun main() {
 
     var t = 0
     var currTime = -1
-    var isSatisfied = false
 
     var currDirection = 0
 
     for(i in 0..direction.length-1) {
-        if(isSatisfied) {
-            break
-        }
-
         if(direction[i] == 'F') {
             t += 1
+            
             x += dx[currDirection]
             y += dy[currDirection]
 
             if(x == 0 && y == 0) {
                 currTime = t
-                isSatisfied = true
                 break
             }
         } else {
             t += 1
-            x += dx[currDirection]
-            y += dy[currDirection]
             
             currDirection = if(direction[i] == 'R') (currDirection - 1 + 4) % 4 else (currDirection + 1) % 4
-                
-            if(x == 0 && y == 0) {
-                currTime = t
-                isSatisfied
-                break
-            }
         }
     }
 
-    print("${currTime-1}")
+    print(currTime)
 }
