@@ -18,6 +18,7 @@ fun main() {
     var isSatisfied = false // 만족한다면 멈춰 for문을 더 돌지 않게 함
 
     for(i in 0..n-1) {
+        // 스타트 지점을 이전에 거쳤다면 종료
         if(isSatisfied) {
             break
         }
@@ -31,12 +32,14 @@ fun main() {
             x += dx[directionNumber]
             y += dy[directionNumber]
 
+            // 스타트 지점 이라면 반복문을 멈추고 result 값을 할당
             if(x == 1000 && y == 1000) {
                 result = currTime
                 isSatisfied = true
                 break
             }
         }
+        // distance 만큼 시간 갱신
         t += dis
     }
 
